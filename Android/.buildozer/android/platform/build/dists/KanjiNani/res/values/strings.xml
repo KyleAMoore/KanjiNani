@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KanjiNani</string>
+    <string name="private_version">1504020205.35</string>
+    <string name="presplash_color">lightgrey</string>
+    <string name="urlScheme">kivy</string>
+</resources>

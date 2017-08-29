@@ -1,0 +1,9 @@
+{
+ "literal" = char,
+ "strokes" = int,
+ "freq" = int,
+ "onReading" = [str, ...],
+ "kunReading" = [str, ...],
+ "meaning" = [str, ...],
+ "nanori" = [str, ...]
+}

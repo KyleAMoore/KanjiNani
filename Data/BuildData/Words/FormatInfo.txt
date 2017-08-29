@@ -1,0 +1,22 @@
+<entry>
+	<k_ele> 
+		<keb>	--kanji or kanji+okurigana reading
+	</k_ele>
+	...
+	<r_ele>
+		<reb>	--nonkanji reading (good for key to dict)
+	</r_ele>
+	...
+	<sense>
+		<pos>	--part of speech
+		<gloss> --translation
+	</sense>
+	...
+</entry>
+
+{
+ "kanji": [str, ...], 
+ "reading": [str, ...],
+ "pos": [str, ...],
+ "meaning": [str, ...]
+}
