@@ -67,3 +67,10 @@
     </ul>
 </div>
 
+<div>
+    <h2>Contact</h2>
+    <ul>
+        <li>For questions about the use, installation, or implementation, contact Kyle Moore <a href="mailto:kylito1@gmail.com">kylito1@gmail.com</a></li>
+        <li>For any other questions, including, but not limited to licensing and permissions questions, contact Dr. Kaoru Ochiai <a href="mailto:kochiai@olemiss.edu">kochiai@olemiss.edu</a></li>
+    </ul>
+</div>
