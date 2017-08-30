@@ -1,0 +1,465 @@
+#   This file is part of KanjiNani.
+#
+#   KanjiNani is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   KanjiNani is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with KanjiNani.  If not, see <http://www.gnu.org/licenses/>.
+
+#:kivy 1.10.0
+
+<HomePage>:
+    searchButton: search_button
+    #indexButton: index_button
+    infoButton: info_button
+
+    canvas:
+        Color:
+            rgba: 0.706, 0.780, 0.906, 1
+        Rectangle:
+            pos: self.pos
+            size: root.width, root.height
+    Label:
+        font_size: 60
+		font_name: "YuGothM.ttc"
+        color: 0, 0, 0, 1
+        center_x: root.width / 2
+        center_y: root.height * 7 / 8
+        text: "\u6F22\u5B57\u4F55"
+
+	Label:
+        font_size: 40
+		font_name: "YuGothM.ttc"
+        color: 0, 0, 0, 1
+        center_x: root.width / 2
+        center_y: root.height * 61 / 64
+        text: "\u304B\u3093\u3058\u306A\u306B"
+
+    Button:
+        id: search_button
+        center: root.width / 2, root.height * 5 / 8
+        size: root.width * 2 / 3, root.height / 10
+        font_name: "CALLI___.TTF"
+        text: "Search"
+
+    #Button:
+    #    id: index_button
+    #    center: root.width / 2, root.height / 2
+    #    size: root.width * 2 / 3, root.height / 10
+    #    font_name: "CALLI___.TTF"
+    #    text: "Index (Coming Soon)"
+
+    Button:
+        id: info_button
+        center: root.width / 2, root.height * 3 / 8
+        size: root.width * 2 / 3, root.height / 10
+        font_name: "CALLI___.TTF"
+        text: "About"
+
+    Label:
+        font_size: 14
+        color: 0.463, 0.443, 0.443, 1
+        center_x: root.width / 2
+        center_y: 10
+        text: u"\u00a9" + "2017 Dr. Kaoru Ochiai"
+
+<InfoPage>:
+	backButton: back_button
+
+	canvas:
+		Color:
+			rgba: 0.706, 0.780, 0.906, 1
+		Rectangle:
+			pos: self.pos
+			size: root.width, root.height
+    ScrollView:
+		pos: root.x, root.height * .1
+        size: root.width, root.height * .9
+		do_scroll_x: False
+		do_scroll_y: True
+		bar_pos_y: "right"
+
+        GridLayout:
+            cols: 1
+            rows: 3
+
+            GridLayout:
+                size_hint_y: .4
+                cols: 1
+                rows: 2
+            	Label:
+                    size_hint_y: .3
+            		font_size: 24
+            		font_name: "CALLI___.TTF"
+            		color: 0, 0, 0, 1
+            		text: "Attributions"
+
+            	Label:
+                    size_hint_y: .7
+            		font_size: 14
+            		font_name: "YuGothM.ttc"
+            		color: 0, 0, 0, 1
+            		text: "Data obtained from and copyrighted by the Electronic Dictionary Research and Development Group (EDRDG). As such, it is subject to their licensing agreement, which can be viewed at: http://www.edrdg.org/edrdg/licence.html\n\nLink to source material: http://www.edrdg.org/jmdict/j_jmdict.html\nhttp://www.csse.monash.edu.au/~jwb/kanjidic.html"
+                    text_size: root.width * .5, None
+
+            GridLayout:
+                size_hint_y: .15
+                cols: 1
+                rows: 2
+            	Label:
+                    size_hint_y: .3
+            		font_size: 24
+            		font_name: "CALLI___.TTF"
+            		color: 0, 0, 0, 1
+            		text: "Owner Information"
+
+            	Label:
+                    size_hint_y: .7
+            		font_size: 14
+            		font_name: "YuGothM.ttc"
+            		color: 0, 0, 0, 1
+            		text: "This Application is written and distributed by Kyle Moore on behalf of the Application's owner and copyright holder, Dr. Kaoru Ochiai of the University of Mississippi."
+                    text_size: root.width * .5, None
+
+            GridLayout:
+                size_hint_y: .45
+                rows: 2
+                cols: 1
+                Label:
+                    size_hint_y: .3
+            		font_size: 24
+            		font_name: "CALLI___.TTF"
+            		color: 0, 0, 0, 1
+            		text: "Licensing and Use Information"
+
+            	Label:
+                    size_hint_y: .7
+            		font_size: 14
+            		font_name: "YuGothM.ttc"
+            		color: 0, 0, 0, 1
+            		text: "This work is distributed under the GNU GPL and may be copied, modified, distributed, or altered at the user\'s discretion. Performing any of these actions implies acceptance of the terms of the license. All derivative works must include reference to this application\'s source page and must be similarly licensed under the GNU GPL.\n\nSource code and documentation available at\n<github.com/KyleAMoore/KanjiNani>"
+                    text_size: root.width * .5, None
+
+	Button:
+		id: back_button
+		center: root.width / 2, root.height / 50
+		size: root.width * 2 / 3, root.height / 10
+		font_name: "CALLI___.TTF"
+		text: "Home"
+
+<IndexPage>:
+	canvas:
+		Color:
+			rgba: 0.706, 0.780, 0.906, 1
+		Rectangle:
+			pos: self.pos
+			size: root.width, root.height
+
+<SearchPage>:
+	searchBar: search_bar
+    searchButton: search_button
+	homeButton: home_button
+	results: res_layout
+
+	canvas:
+		Color:
+			rgba: 0.706, 0.780, 0.906, 1
+		Rectangle:
+			pos: self.pos
+			size: root.width, root.height
+
+    GridLayout:
+        cols: 2
+        rows: 1
+        x: root.width / 10
+        y: root.height * .9
+
+        height: root.height / 11
+        width: root.width * .8
+
+        TextInput:
+    		id: search_bar
+            font_name: "YuGothM.ttc"
+    		size_hint_x: .8
+
+        Button:
+            id: search_button
+            text: "Search"
+            font_name: "CALLI___.TTF"
+            size_hint_x: .2
+
+	ScrollView:
+        id: res_layout
+		pos: root.x , root.height  / 6.5
+        size_hint: None, None
+		size: root.width, root.height * .7
+		do_scroll_x: False
+
+	Button:
+		id: home_button
+		center: root.width / 2, root.height / 50
+		size: root.width * 2 / 3, root.height / 10
+		font_name: "CALLI___.TTF"
+		text: "Home"
+
+<KanjiPage>:
+	homeButton: home_button
+	searchButton: search_button
+	kanLayout: kanjiLayout
+	strokes: stroke_count
+	freq: freq_count
+	kunRead: kun_read
+	onRead: on_read
+	meaning: mean
+	nanori: nan
+
+	canvas:
+		Color:
+			rgba: 0.706, 0.780, 0.906, 1
+		Rectangle:
+			pos: self.pos
+			size: root.width, root.height
+
+	GridLayout:
+		cols: 1
+		rows: 2
+		size: root.width, root.height
+
+		GridLayout:
+			cols: 2
+			rows: 1
+			size: root.width * .9, root.height * .3
+			pos: 0, root.top * .7
+			row_default_height: root.height / 10
+
+			BoxLayout:
+				id: kanjiLayout
+
+			GridLayout:
+				cols: 2
+				rows: 2
+
+				Label:
+					color: 0, 0, 0, 1
+					text: "Strokes:"
+					bold: True
+					halign: "justify"
+				Label:
+					id: stroke_count
+					color: 0, 0, 0, 1
+					halign: "justify"
+				Label:
+					color: 0, 0, 0, 1
+					text: "Frequency:"
+					bold: True
+					halign: "justify"
+				Label:
+					id: freq_count
+					color: 0, 0, 0, 1
+					text_size: root.width / 5, None
+					halign: "justify"
+
+		ScrollView:
+			pos: root.x, root.y
+			size: root.width, root.height
+			do_scroll_x: False
+			do_scroll_y: True
+			bar_pos_y: "right"
+
+			GridLayout:
+				cols: 1
+				rows: 3
+				row_default_height: root.height * .12
+
+				GridLayout:
+					canvas:
+						Color:
+							rgba: 0.56, 0.50, 1, 1
+						Rectangle:
+							pos: self.pos
+							size: self.size
+
+					cols: 2
+					rows: 2
+					Label:
+						color: 0, 0, 0, 1
+						text: "Kun:"
+						bold: True
+						halign: "justify"
+
+					Label:
+						color: 0, 0, 0, 1
+						text: "On:"
+						bold: True
+						halign: "justify"
+
+					Label:
+						id: kun_read
+                        font_name: "YuGothM.ttc"
+						color: 0, 0, 0, 1
+						halign: "justify"
+
+					Label:
+						id: on_read
+                        font_name: "YuGothM.ttc"
+						color: 0, 0, 0, 1
+						halign: "justify"
+
+				GridLayout:
+					canvas:
+						Color:
+							rgba: 0.56, 0.75, 1, 1
+						Rectangle:
+							pos: self.pos
+							size: self.size
+					cols: 2
+					rows: 2
+
+					Label:
+						color: 0, 0, 0, 1
+						text: "Meaning(s):"
+						bold: True
+						halign: "justify"
+
+					Label:
+						color: 0, 0, 0, 0
+
+					Label:
+						id: mean
+						color: 0, 0, 0, 1
+						halign: "justify"
+
+					Label:
+						color: 0, 0, 0, 0
+
+				GridLayout:
+					cols: 2
+					rows: 2
+					canvas:
+						Color:
+							rgba: 0.75, 0.50, 1, 1
+						Rectangle:
+							pos: self.pos
+							size: self.size
+
+					Label:
+						color: 0, 0, 0, 1
+						text: "Nanori:"
+						bold: True
+						halign: "justify"
+
+					Label:
+						color: 0, 0, 0, 0
+
+					Label:
+						id: nan
+                        font_name: "YuGothM.ttc"
+						color: 0, 0, 0, 1
+						halign: "justify"
+
+					Label:
+						color: 0, 0, 0, 0
+
+	Button:
+		id: home_button
+		center: root.width / 3, root.height / 50
+		size: root.width / 4, root.height / 10
+		font_name: "CALLI___.TTF"
+		text: "Home"
+
+	Button:
+		id: search_button
+		center: root.width * 2 / 3, root.height / 50
+		size: root.width / 4, root.height / 10
+		font_name: "CALLI___.TTF"
+		text: "Search"
+
+<WordPage>:
+    wordLabel: word_label
+    readings: read_label
+    meanings: mean_grid
+    homeButton: home_button
+    searchButton: search_button
+
+	canvas:
+		Color:
+			rgba: 0.706, 0.780, 0.906, 1
+		Rectangle:
+			pos: self.pos
+			size: root.width, root.height
+
+    ScrollView:
+        pos: root.x, root.height * .1
+        size: root.width, root.height * .9
+        do_scroll_x: False
+        do_scroll_y: True
+        bar_pos_y: "right"
+
+        GridLayout:
+            cols: 1
+            rows: 3
+            size: root.width, root.height
+            row_default_height: root.height / 15
+
+            GridLayout:
+                cols: 1
+                rows: 1
+                canvas:
+                    Color:
+                        rgba: 0.267, 0.447, 0.7686, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                Label:
+                    id: word_label
+                    font_name: "YuGothM.ttc"
+                    text: "Watashi"
+                    color: 0, 0, 0, 1
+
+            GridLayout:
+                cols: 1
+                rows: 1
+                canvas:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Label:
+                    id: read_label
+                    font_name: "YuGothM.ttc"
+                    text: "Watashi, Watakushi"
+                    color: 0, 0, 0, 1
+
+            GridLayout
+                id: mean_grid
+                cols:2
+
+                canvas:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+    Button:
+		id: home_button
+		center: root.width / 3, root.height / 50
+		size: root.width / 4, root.height / 10
+		font_name: "CALLI___.TTF"
+		text: "Home"
+
+	Button:
+		id: search_button
+		center: root.width * 2 / 3, root.height / 50
+		size: root.width / 4, root.height / 10
+		font_name: "CALLI___.TTF"
+		text: "Search"
