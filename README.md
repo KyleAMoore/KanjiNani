@@ -64,7 +64,6 @@
        <li>Improve graphics and UI balance</li>
        <li>Add index section (List of all words/kanji in some semblance of alphabetic order)</li>
        <li>Shorten dataset to a more reasonable size (remove excessively rare kanji and words</li>
-       <li>Rebuild Windows installation and rebrand with new branding (KanjiNani). ***Highest priority***</li>
     </ul>
 </div>
 
